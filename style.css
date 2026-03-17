@@ -1,148 +1,200 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+.products a, .buttons a {
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
 }
 
-body{
-display:grid;
-grid-template-rows:auto 1fr auto;
-min-height:100vh;
-background:#f0f0f0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-
-header{
-background:#9acd32;
-padding:15px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background: #f0f0f0;
 }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:20px;
+header,
+footer {
+  background: #9acd32;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a{
-text-decoration:none;
-color:black;
-font-weight:bold;
+header {
+  padding: 15px;
 }
 
-/* HOME */
-
-.home{
-display:flex;
-justify-content:center;
-text-align:center;
-padding:40px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* BUTTONS */
-
-.buttons{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:40px;
-}
-
-.buttons a{
-display:block;
-padding:40px;
-background:green;
-color:white;
-border-radius:20px;
-text-align:center;
-text-decoration:none;
-}
-
-/* PRODUCTS */
-
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-padding:40px;
-text-align:center;
-}
-
-.products a{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-background:gray;
-color:white;
-text-decoration:none;
-}
-
-/* FOOTER */
-
-footer{
-background:#9acd32;
-padding:15px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-/* HAMBURGER */
-
-.hamburger{
-display:none;
-font-size:28px;
-cursor:pointer;
-}
-
-#menu-toggle{
-display:none;
-}
-
-/* MOBIEL */
-
-@media (max-width:768px){
-
-nav ul{
-display:none;
-flex-direction:column;
-background:#9acd32;
-position:absolute;
-right:0;
-top:60px;
-width:200px;
-padding:20px;
-}
-
-#menu-toggle:checked + .hamburger + .menu{
-display:flex;
-}
-
-.hamburger{
-display:block;
-}
-
-.buttons{
-grid-template-columns:1fr;
-}
-
-.products{
-grid-template-columns:1fr;
-}
-
-header{
-flex-direction:row;
-}
-
+main .home {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
 }
 
 .github-logo {
   width: 70px;
-  height: auto; /* Houdt de verhouding intact */
+  height: auto;
 }
+
+.products a, .buttons a {
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+}
+.buttons a {
+  display: block;
+  padding: 40px;
+  background: green;
+  color: white;
+}
+.buttons a:focus-visible {
+  outline: 3px solid rgb(123.2, 164, 40);
+  outline-offset: 3px;
+}
+.buttons--compact {
+  padding: 20px;
+}
+.buttons--compact a {
+  padding: 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+  text-align: center;
+}
+.products a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: gray;
+  color: white;
+}
+.products a:active {
+  transform: translateY(1px);
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+header .hamburger {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked + .hamburger + .menu {
+  display: flex;
+}
+
+.p-1 {
+  padding: 4px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.p-4 {
+  padding: 16px;
+}
+
+.p-5 {
+  padding: 20px;
+}
+
+.bg-primary {
+  background: #9acd32;
+}
+
+.bg-button {
+  background: green;
+}
+
+.bg-alt {
+  background: gray;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.buttons a, .products a {
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #9acd32;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 200px;
+    padding: 20px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1024px) {
+  .buttons {
+    gap: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

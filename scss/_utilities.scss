@@ -1,0 +1,30 @@
+@import "variables";
+
+// @for: maak simpele spacing utility classes
+@for $i from 1 through 5 {
+  .p-#{$i} {
+    padding: $i * 4px; // operation
+  }
+}
+
+// @each: kleur utilities
+$utility-colors: (
+  primary: $color-primary,
+  button: $color-button,
+  alt: $color-button-alt
+);
+
+@each $name, $value in $utility-colors {
+  .bg-#{$name} {
+    background: $value;
+  }
+}
+
+// @while: maak margin-top utilities
+$m: 0;
+@while $m <= 20 {
+  .mt-#{$m} {
+    margin-top: $m * 1px;
+  }
+  $m: $m + 10;
+}

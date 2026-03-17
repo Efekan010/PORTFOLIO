@@ -1,0 +1,34 @@
+// Kleuren (type: color)
+$color-primary: #9acd32;
+$color-bg: #f0f0f0;
+$color-link: #000;
+$color-button: green;
+$color-button-alt: gray;
+
+// Tekst (type: string)
+$font-base: Arial, sans-serif;
+
+// Afmetingen (type: number)
+$radius-lg: 20px;
+$header-padding: 15px;
+
+// Namespace via "map" (type: map)
+$space: (
+  xs: 4px,
+  sm: 10px,
+  md: 20px,
+  lg: 40px
+);
+
+$breakpoints: (
+  mobile: 768px,
+  tablet: 1024px
+);
+
+@function space($key) {
+  @return map-get($space, $key);
+}
+
+@function bp($key) {
+  @return map-get($breakpoints, $key);
+}

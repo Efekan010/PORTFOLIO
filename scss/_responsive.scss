@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+// Mobiel (zelfde breakpoint als je oude CSS)
+@include respond-max(mobile) {
+  nav {
+    ul {
+      display: none;
+      flex-direction: column;
+      background: $color-primary;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      width: 200px;
+      padding: space(md);
+    }
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Tablet (extra, zodat je “mobile & tablet versie” echt zichtbaar hebt)
+@include respond-max(tablet) {
+  .buttons {
+    gap: space(sm);
+  }
+}

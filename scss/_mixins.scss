@@ -1,0 +1,28 @@
+@import "variables";
+
+@mixin respond-max($breakpoint) {
+  @media (max-width: bp($breakpoint)) {
+    @content;
+  }
+}
+
+// @if / @elseif / @else voorbeeld
+@mixin button-variant($variant) {
+  @if $variant == primary {
+    background: $color-button;
+    color: white;
+  } @elseif $variant == alt {
+    background: $color-button-alt;
+    color: white;
+  } @else {
+    background: #ddd;
+    color: #111;
+  }
+}
+
+// Placeholder voor @extend
+%card {
+  border-radius: $radius-lg;
+  text-align: center;
+  text-decoration: none;
+}

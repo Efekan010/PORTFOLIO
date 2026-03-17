@@ -1,0 +1,48 @@
+@import "variables";
+
+header,
+footer {
+  background: $color-primary;
+  padding: $header-padding;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  // voorbeeld van operation: padding * 1
+  padding: $header-padding * 1;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: space(md);
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-link;
+    font-weight: bold;
+
+    // 1e manier met &: pseudo-class
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+main {
+  .home {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: space(lg);
+  }
+}
+
+.github-logo {
+  width: 70px;
+  height: auto;
+}

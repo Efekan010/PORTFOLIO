@@ -1,0 +1,73 @@
+@import "variables";
+@import "mixins";
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: space(md);
+  padding: space(lg);
+
+  a {
+    @extend %card;
+    display: block;
+    padding: space(lg);
+    @include button-variant(primary);
+
+    // 2e manier met &: state + operation (radius + 0px is expres simpel)
+    &:focus-visible {
+      outline: 3px solid darken($color-primary, 10%);
+      outline-offset: 3px;
+    }
+  }
+
+  // 3e manier met &: "modifier" class (BEM-stijl)
+  &--compact {
+    padding: space(md);
+
+    a {
+      padding: space(md);
+    }
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: space(md) + 10px; // operation
+  padding: space(lg);
+  text-align: center;
+
+  a {
+    @extend %card;
+    display: inline-block;
+    margin-top: space(sm);
+    padding: space(sm) space(md);
+    @include button-variant(alt);
+
+    // extra &: active
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+// Hamburger menu
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+
+  // &: in combinatie met parent selector (klein voorbeeld)
+  header & {
+    user-select: none;
+  }
+}
+
+#menu-toggle {
+  display: none;
+
+  // &: in combinatie met sibling selectors (werkt met jouw HTML structuur)
+  &:checked + .hamburger + .menu {
+    display: flex;
+  }
+}
